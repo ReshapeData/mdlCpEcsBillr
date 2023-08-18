@@ -18,5 +18,5 @@ purchasesBillingLog_query(token, FNumber)
 日志查询
 }
 \examples{
-purchasesBillingLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001)
+purchasesBillingLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001')
 }

@@ -20,5 +20,5 @@ otherInStockStatus_upload(token, FNumber, FName)
 修改订单状态
 }
 \examples{
-otherInStockStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307240003,赛普集团新账套)
+otherInStockStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307240003','赛普集团新账套')
 }

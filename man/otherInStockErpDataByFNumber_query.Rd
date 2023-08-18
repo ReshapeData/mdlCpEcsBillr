@@ -20,5 +20,5 @@ otherInStockErpDataByFNumber_query(token, FNumber, FName)
 ERP数据查询
 }
 \examples{
-otherInStockErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307240003,赛普集团新账套)
+otherInStockErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307240003','赛普集团新账套')
 }

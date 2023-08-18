@@ -1,4 +1,4 @@
-#' 按单同步
+#' 1按单同步
 #'
 #' @param Ftoken 中台数据库token
 #' @param FNumber 单据编号
@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' saleOrderByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001,赛普集团新账套)
+#' saleOrderByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001','赛普集团新账套')
 saleOrderByNumber_sync<- function(Ftoken,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -21,7 +21,7 @@ saleOrderByNumber_sync<- function(Ftoken,FNumber,FName){
 
 
 
-#' 按单查询
+#' 2按单查询
 #'
 #' @param token 中台数据库token
 #' @param FNumber 单据编号
@@ -30,12 +30,12 @@ saleOrderByNumber_sync<- function(Ftoken,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' saleOrderByNumber(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001)
-saleOrderByNumber<- function(token,FNumber){
+#' saleOrderByNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001')
+saleOrderByNumber_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
-  res <- mdl$saleOrderByNumber(token,FNumber)
+  res <- mdl$saleOrderByNumber_query(token,FNumber)
   #返回结果
   return(res)
 
@@ -51,7 +51,7 @@ saleOrderByNumber<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' saleOrderByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+#' saleOrderByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 saleOrderByDate_query<- function(token,FStartDate){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -73,12 +73,18 @@ saleOrderByDate_query<- function(token,FStartDate){
 #' @export
 #'
 #' @examples
-#' saleOrderErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001,赛普集团新账套)
+#' saleOrderErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001','赛普集团新账套')
 saleOrderErpDataByFNumber_query<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
   res <- mdl$saleOrderErpDataByFNumber_query(token,FNumber,FName)
+
+  #转换成dataframe
+  res <- data.frame(res,stringsAsFactors = FALSE)
+  names(res) <- '查询结果'
+
+
   #返回结果
   return(res)
 
@@ -96,7 +102,7 @@ saleOrderErpDataByFNumber_query<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' saleOrderStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001,赛普集团新账套)
+#' saleOrderStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001','赛普集团新账套')
 saleOrderStatus_upload<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -118,7 +124,7 @@ saleOrderStatus_upload<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' saleOrderLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001)
+#' saleOrderLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001')
 saleOrderLog_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -142,7 +148,7 @@ saleOrderLog_query<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' saleOrderByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+#' saleOrderByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 saleOrderByDate_sync<- function(Ftoken,FDate,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')

@@ -18,5 +18,5 @@ returnNoticeLog_query(token, FNumber)
 日志查询
 }
 \examples{
-returnNoticeLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,R202304110001)
+returnNoticeLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','R202304110001')
 }

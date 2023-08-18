@@ -18,5 +18,5 @@ returnPurchaseLog_query(token, FNumber)
 日志查询
 }
 \examples{
-returnPurchaseLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SR202307250005)
+returnPurchaseLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SR202307250005')
 }

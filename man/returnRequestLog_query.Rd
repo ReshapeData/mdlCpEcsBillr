@@ -18,5 +18,5 @@ returnRequestLog_query(token, FNumber)
 日志查询
 }
 \examples{
-returnRequestLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SR202307250005)
+returnRequestLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SR202307250005')
 }

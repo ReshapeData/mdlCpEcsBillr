@@ -18,5 +18,5 @@ returnSaleLog_query(token, FNumber)
 日志查询
 }
 \examples{
-returnSaleLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,R202304110001)
+returnSaleLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','R202304110001')
 }

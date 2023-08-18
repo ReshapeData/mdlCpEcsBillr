@@ -18,5 +18,5 @@ saleOrderLog_query(token, FNumber)
 日志查询
 }
 \examples{
-saleOrderLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001)
+saleOrderLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001')
 }

@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' purchaseStorageByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001,赛普集团新账套)
+#' purchaseStorageByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001','赛普集团新账套')
 purchaseStorageByNumber_sync<- function(Ftoken,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -30,12 +30,12 @@ purchaseStorageByNumber_sync<- function(Ftoken,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchaseStorageByNumber(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001)
-purchaseStorageByNumber<- function(token,FNumber){
+#' purchaseStorageByNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001')
+purchaseStorageByNumber_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
-  res <- mdl$purchaseStorageByNumber(token,FNumber)
+  res <- mdl$purchaseStorageByNumber_query(token,FNumber)
   #返回结果
   return(res)
 
@@ -51,7 +51,7 @@ purchaseStorageByNumber<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' purchaseStorageByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+#' purchaseStorageByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 purchaseStorageByDate_query<- function(token,FStartDate){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -73,12 +73,15 @@ purchaseStorageByDate_query<- function(token,FStartDate){
 #' @export
 #'
 #' @examples
-#' purchaseStorageErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001,赛普集团新账套)
+#' purchaseStorageErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001','赛普集团新账套')
 purchaseStorageErpDataByFNumber_query<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
   res <- mdl$purchaseStorageErpDataByFNumber_query(token,FNumber,FName)
+  #转换成dataframe
+  res <- data.frame(res,stringsAsFactors = FALSE)
+  names(res) <- '查询结果'
   #返回结果
   return(res)
 
@@ -96,7 +99,7 @@ purchaseStorageErpDataByFNumber_query<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchaseStorageStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001,赛普集团新账套)
+#' purchaseStorageStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001','赛普集团新账套')
 purchaseStorageStatus_upload<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -118,7 +121,7 @@ purchaseStorageStatus_upload<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchaseStorageLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001)
+#' purchaseStorageLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001')
 purchaseStorageLog_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -142,7 +145,7 @@ purchaseStorageLog_query<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' purchaseStorageByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+#' purchaseStorageByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 purchaseStorageByDate_sync<- function(Ftoken,FDate,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')

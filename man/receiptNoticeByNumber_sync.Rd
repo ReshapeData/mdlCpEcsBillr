@@ -20,5 +20,5 @@ receiptNoticeByNumber_sync(Ftoken, FNumber, FName)
 按单同步
 }
 \examples{
-receiptNoticeByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001,赛普集团新账套)
+receiptNoticeByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001','赛普集团新账套')
 }

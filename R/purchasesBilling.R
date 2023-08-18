@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' purchasesBillingByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001,赛普集团新账套)
+#' purchasesBillingByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001','赛普集团新账套')
 purchasesBillingByNumber_sync<- function(Ftoken,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -30,12 +30,12 @@ purchasesBillingByNumber_sync<- function(Ftoken,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchasesBillingByNumber(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001)
-purchasesBillingByNumber<- function(token,FNumber){
+#' purchasesBillingByNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001')
+purchasesBillingByNumber_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
-  res <- mdl$purchasesBillingByNumber(token,FNumber)
+  res <- mdl$purchasesBillingByNumber_query(token,FNumber)
   #返回结果
   return(res)
 
@@ -51,7 +51,7 @@ purchasesBillingByNumber<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' purchasesBillingByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+#' purchasesBillingByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 purchasesBillingByDate_query<- function(token,FStartDate){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -73,13 +73,17 @@ purchasesBillingByDate_query<- function(token,FStartDate){
 #' @export
 #'
 #' @examples
-#' purchasesBillingErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001,赛普集团新账套)
+#' purchasesBillingErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001','赛普集团新账套')
 purchasesBillingErpDataByFNumber_query<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
   res <- mdl$purchasesBillingErpDataByFNumber_query(token,FNumber,FName)
-  #返回结果
+
+
+  #转换成dataframe
+  res <- data.frame(res,stringsAsFactors = FALSE)
+  names(res) <- '查询结果'#返回结果
   return(res)
 
 }
@@ -96,7 +100,7 @@ purchasesBillingErpDataByFNumber_query<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchasesBillingStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001,赛普集团新账套)
+#' purchasesBillingStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001','赛普集团新账套')
 purchasesBillingStatus_upload<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -118,7 +122,7 @@ purchasesBillingStatus_upload<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' purchasesBillingLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001)
+#' purchasesBillingLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001')
 purchasesBillingLog_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -142,7 +146,7 @@ purchasesBillingLog_query<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' purchasesBillingByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+#' purchasesBillingByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 purchasesBillingByDate_sync<- function(Ftoken,FDate,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
