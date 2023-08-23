@@ -18,5 +18,5 @@ salesBillingLog_query(token, FNumber)
 日志查询
 }
 \examples{
-salesBillingLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,S202307200003)
+salesBillingLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','S202307200003')
 }

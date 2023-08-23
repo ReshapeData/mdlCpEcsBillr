@@ -2,7 +2,7 @@
 % Please edit documentation in R/saleOrder.R
 \name{saleOrderByNumber_sync}
 \alias{saleOrderByNumber_sync}
-\title{按单同步}
+\title{1按单同步}
 \usage{
 saleOrderByNumber_sync(Ftoken, FNumber, FName)
 }
@@ -17,8 +17,8 @@ saleOrderByNumber_sync(Ftoken, FNumber, FName)
 
 }
 \description{
-按单同步
+1按单同步
 }
 \examples{
-saleOrderByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,202307030001,赛普集团新账套)
+saleOrderByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','202307030001','赛普集团新账套')
 }

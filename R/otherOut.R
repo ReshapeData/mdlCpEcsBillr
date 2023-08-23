@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' otherOutByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022,赛普集团新账套)
+#' otherOutByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022','赛普集团新账套')
 otherOutByNumber_sync<- function(Ftoken,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -30,12 +30,12 @@ otherOutByNumber_sync<- function(Ftoken,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' otherOutByNumber(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022)
-otherOutByNumber<- function(token,FNumber){
+#' otherOutByNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022')
+otherOutByNumber_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
-  res <- mdl$otherOutByNumber(token,FNumber)
+  res <- mdl$otherOutByNumber_query(token,FNumber)
   #返回结果
   return(res)
 
@@ -51,7 +51,7 @@ otherOutByNumber<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' otherOutByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+#' otherOutByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 otherOutByDate_query<- function(token,FStartDate){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -73,12 +73,15 @@ otherOutByDate_query<- function(token,FStartDate){
 #' @export
 #'
 #' @examples
-#' otherOutErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022,赛普集团新账套)
+#' otherOutErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022','赛普集团新账套')
 otherOutErpDataByFNumber_query<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
   res <- mdl$otherOutErpDataByFNumber_query(token,FNumber,FName)
+  #转换成dataframe
+  res <- data.frame(res,stringsAsFactors = FALSE)
+  names(res) <- '查询结果'
   #返回结果
   return(res)
 
@@ -96,7 +99,7 @@ otherOutErpDataByFNumber_query<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' otherOutStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022,赛普集团新账套)
+#' otherOutStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022','赛普集团新账套')
 otherOutStatus_upload<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -118,7 +121,7 @@ otherOutStatus_upload<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' otherOutLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022)
+#' otherOutLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022')
 otherOutLog_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -142,7 +145,7 @@ otherOutLog_query<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' otherOutByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+#' otherOutByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 otherOutByDate_sync<- function(Ftoken,FDate,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')

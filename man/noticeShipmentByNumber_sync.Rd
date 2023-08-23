@@ -20,5 +20,5 @@ noticeShipmentByNumber_sync(Ftoken, FNumber, FName)
 按单同步
 }
 \examples{
-noticeShipmentByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021,赛普集团新账套)
+noticeShipmentByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021','赛普集团新账套')
 }

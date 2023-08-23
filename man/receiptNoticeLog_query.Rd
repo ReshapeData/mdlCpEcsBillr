@@ -18,5 +18,5 @@ receiptNoticeLog_query(token, FNumber)
 日志查询
 }
 \examples{
-receiptNoticeLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307030001)
+receiptNoticeLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307030001')
 }

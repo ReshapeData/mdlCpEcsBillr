@@ -20,5 +20,5 @@ otherOutByDate_sync(Ftoken, FDate, FName)
 按日期同步
 }
 \examples{
-otherOutByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+otherOutByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 }

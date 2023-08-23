@@ -20,5 +20,5 @@ salesBillingErpDataByFNumber_query(token, FNumber, FName)
 ERP数据查询
 }
 \examples{
-salesBillingErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,S202307200003,赛普集团新账套)
+salesBillingErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','S202307200003','赛普集团新账套')
 }

@@ -20,5 +20,5 @@ purchaseOrderStatus_upload(token, FNumber, FName)
 修改订单状态
 }
 \examples{
-purchaseOrderStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SP202307030002,赛普集团新账套)
+purchaseOrderStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SP202307030002','赛普集团新账套')
 }

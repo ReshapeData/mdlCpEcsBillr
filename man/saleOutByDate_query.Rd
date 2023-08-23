@@ -18,5 +18,5 @@ saleOutByDate_query(token, FStartDate)
 按日期查询
 }
 \examples{
-saleOutByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+saleOutByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 }

@@ -20,5 +20,5 @@ purchaseOrderByNumber_sync(Ftoken, FNumber, FName)
 按单同步
 }
 \examples{
-purchaseOrderByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SP202307030002,赛普集团新账套)
+purchaseOrderByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SP202307030002','赛普集团新账套')
 }

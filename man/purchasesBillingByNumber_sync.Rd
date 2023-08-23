@@ -20,5 +20,5 @@ purchasesBillingByNumber_sync(Ftoken, FNumber, FName)
 按单同步
 }
 \examples{
-purchasesBillingByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,SD202307060001,赛普集团新账套)
+purchasesBillingByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','SD202307060001','赛普集团新账套')
 }

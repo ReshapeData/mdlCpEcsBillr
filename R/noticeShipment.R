@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' noticeShipmentByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021,赛普集团新账套)
+#' noticeShipmentByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021','赛普集团新账套')
 noticeShipmentByNumber_sync<- function(Ftoken,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -30,12 +30,12 @@ noticeShipmentByNumber_sync<- function(Ftoken,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' noticeShipmentByNumber(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021)
-noticeShipmentByNumber<- function(token,FNumber){
+#' noticeShipmentByNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021')
+noticeShipmentByNumber_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
-  res <- mdl$noticeShipmentByNumber(token,FNumber)
+  res <- mdl$noticeShipmentByNumber_query(token,FNumber)
   #返回结果
   return(res)
 
@@ -51,7 +51,7 @@ noticeShipmentByNumber<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' noticeShipmentByDate_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05)
+#' noticeShipmentByDate_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05')
 noticeShipmentByDate_query<- function(token,FStartDate){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -73,12 +73,15 @@ noticeShipmentByDate_query<- function(token,FStartDate){
 #' @export
 #'
 #' @examples
-#' noticeShipmentErpDataByFNumber_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021,赛普集团新账套)
+#' noticeShipmentErpDataByFNumber_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021','赛普集团新账套')
 noticeShipmentErpDataByFNumber_query<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
 
   res <- mdl$noticeShipmentErpDataByFNumber_query(token,FNumber,FName)
+  #转换成dataframe
+  res <- data.frame(res,stringsAsFactors = FALSE)
+  names(res) <- '查询结果'
   #返回结果
   return(res)
 
@@ -96,7 +99,7 @@ noticeShipmentErpDataByFNumber_query<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' noticeShipmentStatus_upload(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021,赛普集团新账套)
+#' noticeShipmentStatus_upload('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021','赛普集团新账套')
 noticeShipmentStatus_upload<- function(token,FNumber,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -118,7 +121,7 @@ noticeShipmentStatus_upload<- function(token,FNumber,FName){
 #' @export
 #'
 #' @examples
-#' noticeShipmentLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306200021)
+#' noticeShipmentLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306200021')
 noticeShipmentLog_query<- function(token,FNumber){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')
@@ -142,7 +145,7 @@ noticeShipmentLog_query<- function(token,FNumber){
 #' @export
 #'
 #' @examples
-#' noticeShipmentByDate_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,2023-07-05,赛普集团新账套)
+#' noticeShipmentByDate_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','2023-07-05','赛普集团新账套')
 noticeShipmentByDate_sync<- function(Ftoken,FDate,FName){
   #注册python模板
   mdl <- tsda::import('mdlCpEcsBillpy.newFunc')

@@ -20,5 +20,5 @@ otherInStockByNumber_sync(Ftoken, FNumber, FName)
 按单同步
 }
 \examples{
-otherInStockByNumber_sync(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,PI202307240003,赛普集团新账套)
+otherInStockByNumber_sync('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','PI202307240003','赛普集团新账套')
 }

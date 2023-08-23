@@ -18,5 +18,5 @@ otherOutLog_query(token, FNumber)
 日志查询
 }
 \examples{
-otherOutLog_query(9B6F803F-9D37-41A2-BDA0-70A7179AF0F3,D202306250022)
+otherOutLog_query('9B6F803F-9D37-41A2-BDA0-70A7179AF0F3','D202306250022')
 }

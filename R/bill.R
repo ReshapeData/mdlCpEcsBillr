@@ -5,7 +5,8 @@
 #' @return 返回值
 #' @export
 #'
-#' @examples billbyno("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","应收单","S202307040026")
+#' @examples
+#' billbyno("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","应收单","S202307040026")
 billbyno <- function(token, category, fnumber){
 
   bill=tsda::import('pyecsbill')
@@ -24,7 +25,8 @@ billbyno <- function(token, category, fnumber){
 #'
 #' @export
 #'
-#' @examples billbydate("2023-07-11")
+#' @examples
+#' billbydate("2023-07-11")
 billbydate <- function(fdate){
 
   bill=tsda::import('pyecsbill')
@@ -43,7 +45,8 @@ billbydate <- function(fdate){
 #'
 #' @export
 #'
-#' @examples billdateupdate("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","应收单","S202307040026")
+#' @examples
+#' billdateupdate("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","应收单","S202307040026")
 billdateupdate <- function(token, category, fnumber){
 
   bill=tsda::import('pyecsbill')
@@ -61,7 +64,8 @@ billdateupdate <- function(token, category, fnumber){
 #'
 #' @export
 #'
-#' @examples srcbillnoquery("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","销售出库单","D202305310016")
+#' @examples
+#' srcbillnoquery("9B6F803F-9D37-41A2-BDA0-70A7179AF0F3","销售出库单","D202305310016")
 srcbillnoquery <- function(token, category, fnumber){
 
   bill=tsda::import('pyecsbill')
